@@ -7,6 +7,7 @@ import SignUp from '../components/SignUp';
 import Login from '../components/Login';
 import ItemIndex from './ItemIndex';
 import ProfilePage from './ProfilePage';
+import EditProfile from '../components/EditProfile'
 
 
 
@@ -83,6 +84,7 @@ class App extends React.Component {
           <Route path="/items" render={(routerProps) => <ItemIndex items={this.state.items} {...routerProps}/>}/>
           <Route path="/login" render={() => <Login setUser={this.setUser}/>}/>
           <Route path="/signup" render={() => <SignUp setUser={this.setUser}/>}/>
+          <Route path="/edit-profile" render={() => <EditProfile currentUser={this.state.currentUser} setUser={this.setUser}/>}/>
           <Route exact path="/home" component={Home}/>
         </Switch>
       </div>

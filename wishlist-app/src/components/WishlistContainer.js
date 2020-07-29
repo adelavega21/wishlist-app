@@ -1,31 +1,24 @@
 import React from 'react'
 
-const WISHLIST_API = 'http://localhost:3000/api/v1/wishlists'
+
 
 class WishlistContainer extends React.Component {
 
-  state = {
-    wishlists: []
-  }
 
-  componentDidMount(){
-    this.getWishlists()
-  }
 
-  getWishlists = () => {
-    fetch(WISHLIST_API)
-    .then(r => r.json())
-    .then(wishlists => {
-      this.setState({ wishlists })
-    })
-  }
+  // getUsersWishlists = () => {
+  //   this.state.wishlists.map(wishlist => {
+  //     if (wishlist.user_id === localStorage.user_id)
+      
+  //   })
+  // }
 
 
   render(){
-    console.log(this.state.wishlists)
+    console.log(this.props)
     return (
       <div className="wishlists-card">
-       wishlist
+       {this.props.title}
       </div>
     )
   }
