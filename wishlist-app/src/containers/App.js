@@ -58,26 +58,28 @@ class App extends React.Component {
       currentUser: user
     }, () => {
       localStorage.user_id = user.id
-      this.props.history.push("/items")  
+      this.props.history.push("/profile")  
     })
     
   }
 
-  logout = () => {
+  removeUserState = () => {
+    this.props.history.push("/login")
     this.setState({
       currentUser: null
     }, () => {
       localStorage.removeItem("user_id")
-      this.props.history.push("/login")
+      
     })
   }
+
 
   render(){
     return (
       <div className="App">
-        <Navbar currentUser={this.state.currentUser} logout={this.logout}/>
+        <Navbar currentUser={this.state.currentUser} removeUserState={this.removeUserState}/>
         <Switch>
-          <Route path="/profile" render={() => <ProfilePage currentUser={this.state.currentUser}/>}/>
+          <Route path="/profile" render={(routerProps) => <ProfilePage currentUser={this.state.currentUser} removeUserState={this.removeUserState} {...routerProps}/>}/>
           <Route path="/items" render={(routerProps) => <ItemIndex items={this.state.items} {...routerProps}/>}/>
           <Route path="/login" render={() => <Login setUser={this.setUser}/>}/>
           <Route path="/signup" render={() => <SignUp setUser={this.setUser}/>}/>

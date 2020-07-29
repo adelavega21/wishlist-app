@@ -24,13 +24,6 @@ class AddWishlistForm extends React.Component {
     })
     .then(res => res.json())
     .then(console.log)
-    // .then(response => {
-    //   if(response.errors){
-    //     alert(response.errors)
-    //   } else {
-    //     this.props.setUser(response)
-    //   }
-    // })
 
   }
 

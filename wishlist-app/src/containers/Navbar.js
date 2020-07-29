@@ -28,7 +28,7 @@ function NavBar(props){
       <Link to="/home">Home</Link>
       <Link to="/items">Items</Link>
       <Link to="/profile">Profile</Link>
-      <UserControls logout={props.logout} currentUser={props.currentUser} />
+      <UserControls removeUserState={props.removeUserState} currentUser={props.currentUser} />
     </div>
   )
 }

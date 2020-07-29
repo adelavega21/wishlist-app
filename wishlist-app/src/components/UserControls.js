@@ -7,7 +7,7 @@ function UserControls(props){
     <div className="user-controls">
       <Link to="/login"><button className="login">LOG IN</button></Link>
       <Link to="/signup"><button className="signup">SIGN UP</button></Link>
-      <button onClick={props.logout}><span role="img" aria-label="user-controls">{props.currentUser ? props.currentUser.username : "👤"} X</span></button>
+      <button onClick={props.removeUserState}><span role="img" aria-label="user-controls">{props.currentUser ? props.currentUser.username : "👤"} X</span></button>
     </div>
   )
 }
