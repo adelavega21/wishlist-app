@@ -18,8 +18,9 @@ class ProfilePage extends React.Component {
     getWishlists = () => {
         fetch(WISHLIST_API)
         .then(r => r.json())
-        .then(wishlists => {
-          this.setState({ wishlists })
+        .then(wishlistArray => {
+            let userWishlists = wishlistArray.filter(list => list.user_id === this.props.currentUser.id)
+            this.setState({ wishlists: userWishlists })
         })
     }
 
