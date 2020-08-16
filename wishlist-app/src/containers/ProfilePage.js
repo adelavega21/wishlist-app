@@ -44,6 +44,13 @@ class ProfilePage extends React.Component {
         this.props.history.push("/edit-profile")
     }
 
+    addNewWishList=(list)=>{
+        const newListArray = [...this.state.wishlists, list]
+        this.setState({
+            wishlists: newListArray
+        })
+    }
+
 
    
 
@@ -55,7 +62,7 @@ class ProfilePage extends React.Component {
                 <h3>My Profile</h3>
                 <UserContainer currentUser={this.props.currentUser} handleDelete={this.handleDelete} routeToEdit={this.routeToEdit}/>
                 <>{this.state.wishlists.map(wishlist => <WishlistContainer key={wishlist.id} {...wishlist} currentUser={this.props.currentUser}/>)} </>
-                <AddWishlistForm />
+                <AddWishlistForm addList={this.addNewWishList}/>
             </div>
         )
     }
