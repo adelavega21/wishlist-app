@@ -20,8 +20,12 @@ class App extends React.Component {
     currentUser: null
   }
 
-  getFirstApiCall(){
-    fetch(ITEMS_API).then(resp => resp.json()).then(items => this.setState({ items }))
+  getFirstApiCall=()=>{
+    fetch(ITEMS_API)
+    .then(resp => resp.json())
+    .then(items => this.setState({ items }))
+
+    console.log(this.state.items)
   }
 
   getSecondApiCall(){
@@ -85,7 +89,7 @@ class App extends React.Component {
           <Route path="/login" render={() => <Login setUser={this.setUser}/>}/>
           <Route path="/signup" render={() => <SignUp setUser={this.setUser}/>}/>
           <Route path="/edit-profile" render={() => <EditProfile currentUser={this.state.currentUser} setUser={this.setUser}/>}/>
-          <Route exact path="/home" component={Home}/>
+          <Route exact path="/home" component={Home} items={this.state.items}/>
         </Switch>
       </div>
     );

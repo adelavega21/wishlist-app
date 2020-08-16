@@ -27,7 +27,7 @@ function NavBar(props){
     <div className="navbar">
       <Link to="/home">Home</Link>
       <Link to="/items">Items</Link>
-      <Link to="/profile">Profile</Link>
+      {props.currentUser? <Link to="/profile">Profile</Link>:null}
       <UserControls removeUserState={props.removeUserState} currentUser={props.currentUser} />
     </div>
   )
