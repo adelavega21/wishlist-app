@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 function UserControls(props){
   return (
     <div className="user-controls">
-      <Link to="/login"><button className="login">LOG IN</button></Link>
-      <Link to="/signup"><button className="signup">SIGN UP</button></Link>
-      <button onClick={props.removeUserState}><span role="img" aria-label="user-controls">{props.currentUser ? props.currentUser.username : "👤"} X</span></button>
+      {props.currentUser? null:<Link to="/login"><button className="login">LOG IN</button></Link>}
+      {props.currentUser? null:<Link to="/signup"><button className="signup">SIGN UP</button></Link>}
+      {props.currentUser? <button onClick={props.removeUserState}><span role="img" aria-label="user-controls">{ props.currentUser.username } X</span></button>:null}
     </div>
   )
 }
