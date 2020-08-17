@@ -37,9 +37,10 @@ img {
 .item-card {
   flex-basis: 20%;
   margin: 10px;
-  border: 2px dotted;
-  padding: 3px;
+  border: 2px outset;
+  padding: 10px;
   border-radius: 5px;
+  background-color: rgba(145, 217, 255, 0.10);
 }
 
 input{
@@ -47,4 +48,22 @@ input{
 }
 button{
   margin-left: 5px;
+}
+
+.footnote{
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.legal{
+  float: left;
+  color: white;
+  font-family: times;
+  margin-left: 10px;
 }

@@ -92,6 +92,7 @@ class App extends React.Component {
           <Route path="/edit-profile" render={() => <EditProfile currentUser={this.state.currentUser} setUser={this.setUser}/>}/>
           <Route exact path="/home" render={()=> <Home items={this.state.items} />}/>
         </Switch>
+        <div className="footnote"><span className="legal">&#169;WishList 2020</span></div>
       </div>
     );
   }
