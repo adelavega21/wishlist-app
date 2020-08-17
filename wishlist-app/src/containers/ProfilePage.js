@@ -59,10 +59,11 @@ class ProfilePage extends React.Component {
     
         return(
             <div className="profile-page">
-                <h3>My Profile</h3>
-                <UserContainer currentUser={this.props.currentUser} handleDelete={this.handleDelete} routeToEdit={this.routeToEdit}/>
-                <>{this.state.wishlists.map(wishlist => <WishlistContainer key={wishlist.id} {...wishlist} currentUser={this.props.currentUser}/>)} </>
-                <AddWishlistForm addList={this.addNewWishList}/>
+                <div id="profile-buttons" ><h3>My Profile</h3>
+                <UserContainer currentUser={this.props.currentUser} handleDelete={this.handleDelete} routeToEdit={this.routeToEdit}/></div>
+                <div id="user-lists"><h3>Your Lists</h3>
+                <>{this.state.wishlists.map(wishlist => <WishlistContainer key={wishlist.id} {...wishlist} currentUser={this.props.currentUser}/>)} </><br/>
+                <AddWishlistForm addList={this.addNewWishList}/></div>
             </div>
         )
     }

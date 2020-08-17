@@ -32,7 +32,7 @@ class AddWishlistForm extends React.Component {
     return (
       <div className="wishlists-card" onSubmit={this.handleSubmit}>
         <form className="new-wishlist-form">
-          <input name="title" value={this.state.title} onChange={this.handleChange}placeholder="Wishlist Title"/>
+          <input id="list-namer" name="title" value={this.state.title} onChange={this.handleChange}placeholder="Wishlist Title"/><br/>
           <button>Create New Wishlist</button>
         </form>
       </div>

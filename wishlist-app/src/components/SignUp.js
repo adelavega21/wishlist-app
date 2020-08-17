@@ -45,11 +45,11 @@ class SignUp extends React.Component {
     return (
       <div className="center-form">
         <form className="auth-form" onSubmit={this.handleSubmit}>
-          <input name="name" value={this.state.name} onChange={this.handleChange}placeholder="name"/>
-          <input name="username" value={this.state.username} onChange={this.handleChange}placeholder="username"/>
-          <input name="password" value={this.state.password} type="password"  onChange={this.handleChange}placeholder="password"/>
-          <input name="passwordConfirmation" value={this.state.passwordConfirmation} type="password"  onChange={this.handleChange}placeholder="password confirmation"/>
-          <button className="login" type="submit">Sign Up</button>
+          <input name="name" value={this.state.name} onChange={this.handleChange}placeholder="name"/><br/>
+          <input name="username" value={this.state.username} onChange={this.handleChange}placeholder="username"/><br/>
+          <input name="password" value={this.state.password} type="password"  onChange={this.handleChange}placeholder="password"/><br/>
+          <input name="passwordConfirmation" value={this.state.passwordConfirmation} type="password"  onChange={this.handleChange}placeholder="password confirmation"/><br/><br/>
+          <button className="login" type="submit">Sign Up!</button>
         </form>
       </div>
     )

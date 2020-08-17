@@ -83,13 +83,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar currentUser={this.state.currentUser} removeUserState={this.removeUserState}/>
+        <img src="https://i.imgur.com/jEVEOA6.png" alt="logo" /><br /><br /><br />
         <Switch>
           <Route path="/profile" render={(routerProps) => <ProfilePage currentUser={this.state.currentUser} removeUserState={this.removeUserState} {...routerProps}/>}/>
           <Route path="/items" render={(routerProps) => <ItemIndex items={this.state.items} {...routerProps}/>}/>
           <Route path="/login" render={() => <Login setUser={this.setUser}/>}/>
           <Route path="/signup" render={() => <SignUp setUser={this.setUser}/>}/>
           <Route path="/edit-profile" render={() => <EditProfile currentUser={this.state.currentUser} setUser={this.setUser}/>}/>
-          <Route exact path="/home" component={Home} items={this.state.items}/>
+          <Route exact path="/home" render={()=> <Home items={this.state.items} />}/>
         </Switch>
       </div>
     );

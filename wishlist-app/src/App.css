@@ -2,9 +2,21 @@
 .App {
   text-align: center;
 }
+#user-lists{
+  overflow: hidden;
+  padding-right: 200px;
+}
 
+#profile-buttons{
+  float: left;
+  padding-left: 50px;
+}
+
+#list-namer{
+  margin: 10px;
+}
 .navbar {
-  background-color: aliceblue;
+  background-color: rgb(145, 216, 255);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -28,4 +40,11 @@ img {
   border: 2px dotted;
   padding: 3px;
   border-radius: 5px;
+}
+
+input{
+  margin: 5px;
+}
+button{
+  margin-left: 5px;
 }
