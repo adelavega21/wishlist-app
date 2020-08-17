@@ -2,6 +2,11 @@
 .App {
   text-align: center;
 }
+
+.logo{
+  margin-top: 50px;
+}
+
 #user-lists{
   overflow: hidden;
   padding-right: 200px;
@@ -21,6 +26,9 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  
 }
 
 .item-index {
