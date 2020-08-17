@@ -13,7 +13,7 @@ const UserContainer = props => {
   return (
       <div className="user-info-card">
         <h3>{name}</h3>
-        <div>Username: {username}</div><br />
+        <div>Username: {username.toUpperCase()}</div><br />
         <button onClick={props.routeToEdit}>Edit Profile</button>||
         <button onClick={props.handleDelete}>Delete Profile</button>
       
