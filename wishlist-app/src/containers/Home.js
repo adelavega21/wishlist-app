@@ -1,6 +1,6 @@
 
 import React from 'react';
-import ItemCard from '../components/SplashPageItemCards';
+import ItemCard from '../components/landingPageItemCards';
 // import { Route, Switch } from 'react-router-dom';
 
 function Home(props){

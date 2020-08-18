@@ -10,7 +10,7 @@ const ItemCard = props => {
             <h3>{name}</h3>
             <div>Category: {category}</div>
             <div>Price: ${price}</div>
-            <div>Buy Link </div>
+            <div><a href={`https://www.amazon.com/s?k=${name}`}>Buy Now!</a> </div>
         </div>
     )
 }
