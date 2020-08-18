@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItemCard = props => {
-    let { img_url, name, price, category } = props;
+    let { img_url, name} = props;
 
     function getRandomInt() {
         let min = Math.ceil(900);
