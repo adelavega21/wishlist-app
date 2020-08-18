@@ -7,22 +7,25 @@ import AddWishlistForm from '../components/AddWishlistForm';
 // const WISHLIST_API = 'http://localhost:3000/api/v1/wishlists'
 
 class ProfilePage extends React.Component {
-    // state = {
-    //     wishlists: []
-    // }
+    state = {
+        filteredWishlists: []
+    }
     
-    // componentDidMount(){
-    //     this.getWishlists()
-    // }
+    componentDidMount(){
+        this.filterUserWishlists()
+    }
     
-    // getWishlists = () => {
-    //     fetch(WISHLIST_API)
-    //     .then(r => r.json())
-    //     .then(wishlistArray => {
-    //         let userWishlists = wishlistArray.filter(list => list.user_id === this.props.currentUser.id)
-    //         this.setState({ wishlists: userWishlists })
-    //     })
-    // }
+    filterUserWishlists= () => {
+        let filteredUserWishlists = this.props.wishlists.filter(wishlist => wishlist.user_id === this.props.currentUser.id)
+        this.addfilteredwishlists(filteredUserWishlists)
+        
+    }
+    
+    addfilteredwishlists = (wishlists) => {
+        console.log(wishlists)
+        let filteredAllUserWishlist = [...this.state.filteredWishlists, wishlists]
+        this.setState({filteredWishlists: filteredAllUserWishlist[0]})
+    }
 
 
     
@@ -44,25 +47,18 @@ class ProfilePage extends React.Component {
         this.props.history.push("/edit-profile")
     }
 
-    // addNewWishList=(list)=>{
-    //     const newListArray = [...this.state.wishlists, list]
-    //     this.setState({
-    //         wishlists: newListArray
-    //     })
-    // }
-
 
    
 
     render() {
     
-        console.log(this.props.wishlists)
+        console.log(this.state.filteredWishlists)
         return(
             <div className="profile-page">
                 <div id="profile-buttons" ><h3>My Profile</h3>
                 <UserContainer currentUser={this.props.currentUser} handleDelete={this.handleDelete} routeToEdit={this.routeToEdit}/></div>
                 <div id="user-lists"><h3>Your Lists</h3>
-                <>{this.props.wishlists.map(wishlist => <WishlistContainer key={wishlist.id} {...wishlist} setWishlist={this.props.setWishlist} currentUser={this.props.currentUser}/>)} </><br/>
+                <>{this.state.filteredWishlists.map(wishlist => <WishlistContainer key={wishlist.id} {...wishlist} setWishlist={this.props.setWishlist} currentUser={this.props.currentUser}/>)} </><br/>
                 <AddWishlistForm addNewWishList={this.props.addNewWishList}/></div>
             </div>
         )
