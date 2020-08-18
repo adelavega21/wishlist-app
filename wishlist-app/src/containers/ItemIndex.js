@@ -15,7 +15,7 @@ class ItemIndex extends React.Component {
                 <Switch>
                     <Route 
                         exact path={`${match.path}`} 
-                        render={() => <> {items.map(item => <ItemCard key={item.id} createWishlistItem={this.props.createWishlistItem} {...item} match={this.props.match} push={this.props.history.push} wishlists={this.props.wishlists}/>)} </>}
+                        render={() => <> {items.map(item => <ItemCard key={item.id} currentUser={this.props.currentUser} createWishlistItem={this.props.createWishlistItem} {...item} match={this.props.match} push={this.props.history.push} wishlists={this.props.wishlists}/>)} </>}
                     />
                 </Switch>
             </div>

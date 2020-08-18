@@ -152,7 +152,7 @@ class App extends React.Component {
         <Switch>
           <Route path={`/wishlists/:wishlistId`} render={() => <WishlistPage savedItems={this.state.savedItems} wishlistItems={this.state.wishlistItems} currentWishlist={this.state.currentWishlist} wishlists={this.state.wishlists} items={this.state.items}/>}/>
           <Route path="/profile" render={(routerProps) => <ProfilePage addNewWishList={this.addNewWishList} currentUser={this.state.currentUser} setWishlist={this.setWishlist} removeUserState={this.removeUserState} wishlists={this.state.wishlists} {...routerProps}/>}/>
-          <Route path="/items" render={(routerProps) => <ItemIndex createWishlistItem={this.createWishlistItem}items={this.state.items} {...routerProps} wishlists={this.state.wishlists}/>}/>
+          <Route path="/items" render={(routerProps) => <ItemIndex currentUser={this.state.currentUser} createWishlistItem={this.createWishlistItem}items={this.state.items} {...routerProps} wishlists={this.state.wishlists}/>}/>
           <Route path="/login" render={() => <Login setUser={this.setUser}/>}/>
           <Route path="/signup" render={() => <SignUp setUser={this.setUser}/>}/>
           <Route path="/edit-profile" render={() => <EditProfile currentUser={this.state.currentUser} setUser={this.setUser}/>}/>
