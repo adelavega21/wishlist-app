@@ -63,7 +63,7 @@ class ProfilePage extends React.Component {
                 <UserContainer currentUser={this.props.currentUser} handleDelete={this.handleDelete} routeToEdit={this.routeToEdit}/></div>
                 <div id="user-lists"><h3>Your Lists</h3>
                 <>{this.props.wishlists.map(wishlist => <WishlistContainer key={wishlist.id} {...wishlist} setWishlist={this.props.setWishlist} currentUser={this.props.currentUser}/>)} </><br/>
-                <AddWishlistForm addList={this.props.addNewWishList}/></div>
+                <AddWishlistForm addNewWishList={this.props.addNewWishList}/></div>
             </div>
         )
     }
