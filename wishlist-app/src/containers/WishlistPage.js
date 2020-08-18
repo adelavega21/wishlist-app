@@ -45,6 +45,14 @@ class WishlistPage extends React.Component {
         return(
             <div>
                 <h1>{this.props.currentWishlist.title}</h1>
+                <div class="tbl">
+                <div class="cell">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" target="_blank" class="tweet">
+                <i></i>
+                <span>Tweet</span>
+                </a>
+                </div>
+                </div>
                 <div className='item-index'>
                     {this.state.finalItemsArr.map(item => <ItemCard key={item.id} {...item}/>)}
                 </div>
@@ -55,3 +63,6 @@ class WishlistPage extends React.Component {
 }
 
 export default WishlistPage
+
+
+

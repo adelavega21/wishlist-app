@@ -27,6 +27,12 @@ class ProfilePage extends React.Component {
         this.setState({filteredWishlists: filteredAllUserWishlist[0]})
     }
 
+    addListToUserLists=(list)=>{
+        const newArray = [...this.state.filteredWishlists, list]
+        this.setState({
+            filteredWishlists: newArray
+        })
+    }
 
     
     handleDelete = event => {
@@ -59,10 +65,11 @@ class ProfilePage extends React.Component {
                 <UserContainer currentUser={this.props.currentUser} handleDelete={this.handleDelete} routeToEdit={this.routeToEdit}/></div>
                 <div id="user-lists"><h3>Your Lists</h3>
                 <>{this.state.filteredWishlists.map(wishlist => <WishlistContainer key={wishlist.id} {...wishlist} setWishlist={this.props.setWishlist} currentUser={this.props.currentUser}/>)} </><br/>
-                <AddWishlistForm addNewWishList={this.props.addNewWishList}/></div>
+                <AddWishlistForm addNewWishList={this.addListToUserLists}/></div>
             </div>
         )
     }
 }
 
 export default ProfilePage;
+

@@ -23,7 +23,12 @@ class AddWishlistForm extends React.Component {
       body: JSON.stringify({title: this.state.title, user_id: localStorage.user_id})
     })
     .then(res => res.json())
-    .then(list => this.props.addNewWishList(list))
+    .then(list => {
+      this.props.addNewWishList(list)
+      this.setState({
+        title: ""
+      })
+    })
 
   }
 
