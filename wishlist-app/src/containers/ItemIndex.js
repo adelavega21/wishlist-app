@@ -9,15 +9,13 @@ class ItemIndex extends React.Component {
 
     render() {
         let { match, items } = this.props;
-        
-        let shuffledItems = items.sort(() => Math.random() - 0.5)
 
         return (
             <div className="item-index">
                 <Switch>
                     <Route 
                         exact path={`${match.path}`} 
-                        render={() => <> {shuffledItems.map(item => <ItemCard key={item.id} currentUser={this.props.currentUser} createWishlistItem={this.props.createWishlistItem} {...item} match={this.props.match} push={this.props.history.push} wishlists={this.props.wishlists}/>)} </>}
+                        render={() => <> {items.map(item => <ItemCard key={item.id} currentUser={this.props.currentUser} createWishlistItem={this.props.createWishlistItem} {...item} match={this.props.match} push={this.props.history.push} wishlists={this.props.wishlists}/>)} </>}
                     />
                 </Switch>
             </div>

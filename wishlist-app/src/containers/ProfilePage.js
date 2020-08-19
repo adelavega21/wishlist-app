@@ -32,6 +32,7 @@ class ProfilePage extends React.Component {
         this.setState({
             filteredWishlists: newArray
         })
+        this.props.addListToApp(list)
     }
 
     

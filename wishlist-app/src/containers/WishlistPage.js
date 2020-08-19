@@ -32,11 +32,19 @@ class WishlistPage extends React.Component {
             this.props.savedItems.map(savedItem => {
             if(newWishlistItem.item_id === savedItem.id)
             newWishlistItemsArray.push(savedItem)
-        })
-            
+        })}
+        
+        let uniqueArray=[]
+        
+        for(let i=0; i<newWishlistItemsArray.length; i++){
+            if(!uniqueArray.includes(newWishlistItemsArray[i])){
+                uniqueArray.push(newWishlistItemsArray[i])
+            }
         }
+
+        
         console.log(newWishlistItemsArray)
-        this.setState({finalItemsArr: newWishlistItemsArray})
+        this.setState({finalItemsArr: uniqueArray})
     }
 
 
