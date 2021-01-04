@@ -2,7 +2,7 @@ import React from 'react'
 
 class AddWishlistForm extends React.Component {
   state = {
-    title: ""
+    title: null
   }
 
   handleChange = (event) => {
