@@ -13,7 +13,7 @@ const ItemCard = props => {
         <div className="item-card">
             <img src={img_url} alt={name} />
             <h3>{name}</h3>
-            {getRandomInt()} users added {name} to their list.
+            {getRandomInt()} users added {name} to a list.
         </div>
     )
 }
